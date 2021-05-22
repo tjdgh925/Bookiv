@@ -1,4 +1,4 @@
-package com.bookiv;
+package com.example.bookiv;
 
 import com.facebook.react.ReactActivity;
 
