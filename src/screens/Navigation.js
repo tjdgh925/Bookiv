@@ -15,6 +15,7 @@ import Header from '../components/Header';
 import UserPage from './UserPage';
 import EditProfile from './EditProfile';
 import LikeScreen from './LikeScreen';
+import UploadPost from './UploadPost';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -128,7 +129,7 @@ const MainTabScreen = () => {
         <Tab.Screen name="Home" component={postNavigator} />
         {/* Home화면은 Tab Navigator 하나 더 필요 */}
         <Tab.Screen name="Search" component={SearchScreen} />
-        <Tab.Screen name="Post" component={PostScreen} />
+        <Tab.Screen name="Post" component={UploadPost} />
         <Tab.Screen name="Notification" component={NotificationScreen} />
         <Tab.Screen name="Profile" component={Edit} />
         {/* Profile 화면은 Tab Navigator 하나 더 필요 */}
