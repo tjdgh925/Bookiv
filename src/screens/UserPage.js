@@ -14,9 +14,7 @@ export default function UserPage({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container2}>
-        <View style={styles.headerArea}>
-          <Text style={styles.headerText}>BooKiv</Text>
-        </View>
+        
         <View style={styles.userArea}>
           <View style={styles.IconArea}>
             <View style={styles.iconPaint}>
@@ -76,10 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 
-  headerArea: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
+  
   userArea: {
     flex: 2,
     flexDirection: 'row',

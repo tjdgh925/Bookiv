@@ -1,4 +1,4 @@
-import {StatusBar} from 'expo-status-bar';
+
 import React, {useState, createRef} from 'react';
 import {
   StyleSheet,
@@ -101,7 +101,6 @@ export default function SignUpScreen({navigation}) {
             <Text style={styles.join}>Sign up</Text>
           </TouchableOpacity>
         </View>
-        <StatusBar style="auto" />
       </View>
     </SafeAreaView>
   );

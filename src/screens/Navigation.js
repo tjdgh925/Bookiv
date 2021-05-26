@@ -6,7 +6,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SignInScreen from './SignInScreen';
 import ForgetPasswordScreen from './ForgetPasswordScreen';
-// import SignUpScreen from './SignUpScreen';
+import SignUpScreen from './SignUpScreen';
 import MainScreen from './MainScreen';
 import SinglePost from './SinglePost';
 import CreatePost from '../components/CreatePost';
@@ -16,6 +16,7 @@ import UserPage from './UserPage';
 import EditProfile from './EditProfile';
 import LikeScreen from './LikeScreen';
 import UploadPost from './UploadPost';
+import Search from './Search';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -66,15 +67,15 @@ const Auth = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name=" " component={SignInScreen} options={headerOption} />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="SignUpScreen"
         component={SignUpScreen}
-        options={{title: '회원 가입'}}
-      /> */}
+        options={headerOption}
+      />
       <Stack.Screen
         name="ForgetPasswordScreen"
         component={ForgetPasswordScreen}
-        options={{title: '비밀번호 찾기'}}
+        options={headerOption}
       />
     </Stack.Navigator>
   );
@@ -128,9 +129,9 @@ const MainTabScreen = () => {
       <Tab.Navigator>
         <Tab.Screen name="Home" component={postNavigator} />
         {/* Home화면은 Tab Navigator 하나 더 필요 */}
-        <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Screen name="Search" component={Search} />
         <Tab.Screen name="Post" component={UploadPost} />
-        <Tab.Screen name="Notification" component={NotificationScreen} />
+        <Tab.Screen name="Notification" component={LikeScreen} />
         <Tab.Screen name="Profile" component={Edit} />
         {/* Profile 화면은 Tab Navigator 하나 더 필요 */}
       </Tab.Navigator>
