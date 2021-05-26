@@ -26,14 +26,6 @@ const MainStack = createStackNavigator();
 const headerOption = {
   headerShown: false,
 };
-
-function HomeScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
 function SearchScreen() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
@@ -41,24 +33,10 @@ function SearchScreen() {
     </View>
   );
 }
-function PostScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Post!</Text>
-    </View>
-  );
-}
 function NotificationScreen() {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>Notification!</Text>
-    </View>
-  );
-}
-function ProfileScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Profile!</Text>
     </View>
   );
 }
@@ -102,7 +80,6 @@ const MainUpper = () => {
     <MainUpperTab.Navigator>
       <MainUpperTab.Screen name="최신" component={MainStackScreen} />
       <MainUpperTab.Screen name="인기" component={MainStackScreen} />
-      <MainUpperTab.Screen name="스토어" component={MainStackScreen} />
     </MainUpperTab.Navigator>
   );
 };
