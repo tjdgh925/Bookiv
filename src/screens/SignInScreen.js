@@ -90,9 +90,7 @@ export default function SignInScreen({navigation}) {
               style={styles.iconSNS}>
               <Image
                 style={styles.tinyImg}
-                source={{
-                  uri: 'https://reactnative.dev/img/tiny_logo.png',
-                }}
+                source={require('../../image/google.png')}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -101,9 +99,7 @@ export default function SignInScreen({navigation}) {
               style={styles.iconSNS}>
               <Image
                 style={styles.tinyImg}
-                source={{
-                  uri: 'https://reactnative.dev/img/tiny_logo.png',
-                }}
+                source={require('../../image/facebook.png')}
               />
             </TouchableOpacity>
             <TouchableOpacity
@@ -112,9 +108,7 @@ export default function SignInScreen({navigation}) {
               style={styles.iconSNS}>
               <Image
                 style={styles.tinyImg}
-                source={{
-                  uri: 'https://reactnative.dev/img/tiny_logo.png',
-                }}
+                source={require('../../image/twitter.png')}
               />
             </TouchableOpacity>
           </View>
@@ -145,6 +139,8 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 35,
     fontWeight: '600',
+    color: "#837976",
+    elevation: 1,
   },
   inputForm: {
     paddingVertical: 30,
@@ -158,8 +154,9 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
     borderColor: '#000',
-    borderWidth: 1,
+    //borderWidth: 1,
     borderRadius: 20,
+    elevation: 1,
   },
   signInText: {
     color: '#fff',
@@ -173,6 +170,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 40,
     borderRadius: 20,
+    elevation: 2.5,
   },
   signUpForm: {
     paddingTop: 10,

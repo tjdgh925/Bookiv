@@ -55,13 +55,13 @@ export default function SignUpScreen({navigation}) {
     <SafeAreaView style={styles.container}>
       <View style={styles.container2}>
         <View style={styles.header}>
-          <Text style={styles.headertext}>Sign UP</Text>
+          <Text style={styles.headertext}>Sign up</Text>
         </View>
         <View style={styles.case2}>
           <Text style={styles.text2}>ID</Text>
           <TextInput
             style={styles.input}
-            placeholder="Name(20자 이내)"
+            placeholder="Name"
             onChangeText={text => setName(text)}
             returnKeyType="next"
             blurOnSubmit={false}
@@ -75,7 +75,7 @@ export default function SignUpScreen({navigation}) {
           <Text style={styles.text2}>EMAIL</Text>
           <TextInput
             style={styles.input}
-            placeholder="Email(50자 이내)"
+            placeholder="Email"
             onChangeText={text => setEmail(text)}
             returnKeyType="next"
             blurOnSubmit={false}
@@ -141,18 +141,22 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontWeight: '600',
     paddingLeft: 15,
-    color: '#292E49',
+    color: '#837976',
+    elevation: 1,
   },
   text2: {
-    fontSize: 20,
+    fontSize: 15,
+    fontWeight: '400',
+    paddingTop: 10,
   },
   input: {
-    height: 40,
-    width: 278,
-    borderWidth: 1,
+    //height: 40,
+    //width: 278,
+    //borderWidth: 1,
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 10,
+    elevation: 1,
   },
   button: {
     backgroundColor: '#FE9F59',
@@ -162,6 +166,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     alignSelf: 'center',
+    elevation: 2.5,
   },
   join: {
     color: 'white',

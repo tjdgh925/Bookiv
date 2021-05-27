@@ -64,6 +64,8 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 35,
     fontWeight: '600',
+    color: "#837976",
+    elevation: 1,
   },
   inputForm: {
     paddingVertical: 30,
@@ -77,10 +79,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 10,
     borderColor: '#000',
-    borderWidth: 1,
+    //borderWidth: 1,
     borderRadius: 20,
+    elevation: 1,
   },
-  FindBtnText: {
+  FindText: {
     color: '#fff',
     fontSize: 15,
     fontWeight: '400',
@@ -92,5 +95,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 40,
     borderRadius: 20,
+    elevation:2.5
   },
 });
