@@ -145,7 +145,6 @@
 				352A7975E4DC2E44E2CD7BF9 /* Pods-Bookiv-BookivTests.debug.xcconfig */,
 				4D9DD3411D8DF54FC2EEDFE9 /* Pods-Bookiv-BookivTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -447,6 +446,8 @@
 					"-ObjC",
 					"-lc++",
 					"$(inherited)",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -492,6 +493,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
@@ -517,6 +519,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text, View, StyleSheet} from 'react-native';
+import {SafeAreaView, Text, View, StyleSheet, Image} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -103,14 +103,94 @@ const MainTabScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={postNavigator} />
-        {/* Home화면은 Tab Navigator 하나 더 필요 */}
-        <Tab.Screen name="Search" component={Search} />
-        <Tab.Screen name="Post" component={UploadPost} />
-        <Tab.Screen name="Notification" component={LikeScreen} />
-        <Tab.Screen name="Profile" component={Edit} />
-        {/* Profile 화면은 Tab Navigator 하나 더 필요 */}
+      <Tab.Navigator tabBarOptions={{showLabel: false}}>
+        <Tab.Screen
+          name="Home"
+          component={postNavigator}
+          options={{
+            tabBarIcon: ({focused}) => {
+              return (
+                <Image
+                  source={
+                    focused
+                      ? require('../../image/home_on.png')
+                      : require('../../image/home_off.png')
+                  }
+                  style={{width: 30, height: 30}}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Search"
+          component={Search}
+          options={{
+            tabBarIcon: ({focused}) => {
+              return (
+                <Image
+                  source={
+                    focused
+                      ? require('../../image/search_on.png')
+                      : require('../../image/search_off.png')
+                  }
+                  style={{width: 30, height: 30}}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Post"
+          component={UploadPost}
+          options={{
+            tabBarIcon: () => {
+              return (
+                <Image
+                  source={require('../../image/upload+.png')}
+                  style={{width: 30, height: 30}}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name=" "
+          component={LikeScreen}
+          options={{
+            tabBarIcon: ({focused}) => {
+              return (
+                <Image
+                  source={
+                    focused
+                      ? require('../../image/bell_on.png')
+                      : require('../../image/bell_off.png')
+                  }
+                  style={{width: 30, height: 30}}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={Edit}
+          options={{
+            showLabel: false,
+            tabBarIcon: ({focused}) => {
+              return (
+                <Image
+                  source={
+                    focused
+                      ? require('../../image/user_on.png')
+                      : require('../../image/user_off.png')
+                  }
+                  style={{width: 30, height: 30}}
+                />
+              );
+            },
+          }}
+        />
       </Tab.Navigator>
     </SafeAreaView>
   );
