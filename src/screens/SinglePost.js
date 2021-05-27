@@ -22,40 +22,51 @@ export default function CreatePost({navigation}) {
     //링크
     //
   };
+  const likes = 6;
+  const comments = 9;
   return (
     <View style={styles.containerBig}>
       <KeyboardAwareScrollView automaticallyAdjustContentInsets={false}>
         <View style={styles.container}>
-          <Text>UID</Text>
+          <Text style={styles.userID}>UID</Text>
           <View style={styles.imageContainer}>
             <Image
-              // resizeMode="cover"
+              resizeMode="cover"
               style={styles.image}
               source={require('../../image/NorwegianWood.jpeg')}
             />
           </View>
-          <View>
+          <View style={styles.textContainer}>
             <Text style={styles.content}>
               Eiusmod deserunt culpa sunt est id minim eiusmod proident.
               Essemagnanostrud magna consequat incididunt elit ipsum magna amet
               adipisicingaliqua adipisicing qui. Eu irure non quis excepteur
             </Text>
           </View>
-          <View style={styles.textContainer}>
+          <View>
             <View style={styles.comment}>
-              <Text>좋아요</Text>
-              <Text>댓글</Text>
+              <Text> 좋아요 {likes} </Text>
+              <Text> 댓글 {comments} </Text>
             </View>
           </View>
           <View style={styles.btnContainer}>
-            <TouchableOpacity>
-              <Text>❤️</Text>
+            <TouchableOpacity style={styles.btn}>
+              <Image
+                source={require('../../image/heart.png')}
+                style={styles.img}
+              />
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>❤️</Text>
+            <TouchableOpacity style={styles.btn}>
+              <Image
+                source={require('../../image/bookmark.png')}
+                style={styles.img}
+              />
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>❤️</Text>
+            <TouchableOpacity style={styles.btn}>
+              <Image
+                source={require('../../image/aladin.png')}
+                style={[styles.img, styles.aladin]}
+              />
             </TouchableOpacity>
           </View>
           <CreateComment />
@@ -74,7 +85,10 @@ export default function CreatePost({navigation}) {
               returnKeyType="send"
             />
             <TouchableOpacity>
-              <Text style={styles.submitComment}>❤️</Text>
+              <Image
+                style={styles.submitComment}
+                source={require('../../image/submit.png')}
+              />
             </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>
@@ -87,30 +101,55 @@ const styles = StyleSheet.create({
   containerBig: {
     flex: 1,
   },
-  container: {
-    flex: 1,
+  userID: {
+    paddingVertical: 5,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: '#c2c2c2',
     paddingHorizontal: 10,
   },
+  container: {
+    flex: 1,
+  },
   image: {
-    width: '100%',
+    width: '70%',
     height: undefined,
-    aspectRatio: 1,
+    aspectRatio: 0.8,
     resizeMode: 'contain',
     borderWidth: 3,
     paddingVertical: 10,
+    paddingHorizontal: 10,
   },
   imageContainer: {
     alignItems: 'center',
+    paddingVertical: 7,
   },
+  img: {
+    height: 30,
+    width: 30,
+  },
+  btn: {paddingRight: 10},
   textContainer: {
+    paddingHorizontal: 10,
+    paddingVertical: 10,
     flex: 1,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: '#c2c2c2',
   },
   comment: {
     paddingVertical: 10,
+    paddingHorizontal: 10,
     flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderColor: '#c2c2c2',
   },
   btnContainer: {
     flexDirection: 'row',
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderColor: '#c2c2c2',
   },
   commentWrite: {
     alignSelf: 'flex-end',
@@ -124,14 +163,23 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     paddingLeft: 10,
+    paddingVertical: -20,
   },
   submitComment: {
     position: 'absolute',
     right: 5,
     top: 5,
+    width: 22,
+    height: 22,
   },
   footer: {
     flex: 1,
     justifyContent: 'flex-end',
+  },
+  aladin: {
+    borderWidth: 1,
+    borderColor: 'black',
+    borderRadius: 10,
+    padding: 15,
   },
 });

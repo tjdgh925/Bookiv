@@ -1,4 +1,3 @@
-
 import React, {useState, createRef} from 'react';
 import {
   StyleSheet,
@@ -147,7 +146,7 @@ const styles = StyleSheet.create({
   text2: {
     fontSize: 15,
     fontWeight: '400',
-    paddingTop: 10,
+    paddingTop: 15,
   },
   input: {
     //height: 40,

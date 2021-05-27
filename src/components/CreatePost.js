@@ -21,6 +21,8 @@ export default function CreatePost() {
     //링크
     //
   };
+  const likes = 6;
+  const comments = 9;
   const navigation = useNavigation();
   return (
     <View style={styles.setBorder}>
@@ -38,11 +40,10 @@ export default function CreatePost() {
               adipisicing aliqua adipisicing qui. Eu irure non quis excepteur
             </Text>
             <View style={styles.comment}>
-              <Text>좋아요</Text>
-              <Text>댓글</Text>
+              <Text> 좋아요 {likes} </Text>
+              <Text> 댓글 {comments} </Text>
             </View>
           </View>
-          {/* </TouchableOpacity> */}
         </View>
       </TouchableOpacity>
     </View>
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     paddingHorizontal: 15,
+    paddingTop: 4,
   },
   textContainer: {
     paddingLeft: '5%',
@@ -72,7 +74,9 @@ const styles = StyleSheet.create({
   userName: {
     textAlign: 'left',
     paddingLeft: '5%',
-    paddingVertical: 10,
+    paddingVertical: 2,
+    borderBottomWidth: 1,
+    borderColor: '#c2c2c2',
   },
   image: {
     height: 150,

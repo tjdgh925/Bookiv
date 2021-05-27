@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 35,
     fontWeight: '600',
-    color: "#837976",
+    color: '#837976',
     elevation: 1,
   },
   inputForm: {
