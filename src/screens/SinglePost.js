@@ -100,6 +100,7 @@ export default function CreatePost({navigation}) {
 const styles = StyleSheet.create({
   containerBig: {
     flex: 1,
+    backgroundColor: '#fff',
   },
   userID: {
     paddingVertical: 5,

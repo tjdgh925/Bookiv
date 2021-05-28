@@ -10,8 +10,8 @@ export default function Header() {
 }
 const styles = StyleSheet.create({
   HeaderContainer: {
-    //marginLeft: 20,
-    backgroundColor: "white",
+    backgroundColor: 'white',
+    paddingVertical: 10,
   },
   HeaderText: {
     fontSize: 30,

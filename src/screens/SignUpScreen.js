@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     //backgroundColor: 'white',
     //justifyContent: 'center',
     alignSelf: 'center',
-    paddingVertical: 50,
+    paddingVertical: 20,
   },
   /*case3: {
     //flex:2,

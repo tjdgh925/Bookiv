@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, SafeAreaView, View} from 'react-native';
+import {StyleSheet, Image, Text, SafeAreaView, View} from 'react-native';
 // import {FontAwesome} from '@expo/vector-icons';
 
 class LikeScreen extends React.Component {
@@ -8,27 +8,39 @@ class LikeScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.container2}>
           <View style={styles.whoLike}>
-            {/* <FontAwesome name="user-circle" size={24} color="black" /> */}
+            <Image
+              source={require('../../image/face4.jpeg')}
+              style={styles.profileImage}
+            />
             <Text style={styles.likeText}>
-              KnK님이 회원님의 게시물을 좋아합니다.
+              you_r_love 님이 회원님의 게시물을 좋아합니다.
             </Text>
           </View>
           <View style={styles.whoLike}>
-            {/* <FontAwesome name="user-circle" size={24} color="black" /> */}
+            <Image
+              source={require('../../image/profile1.png')}
+              style={styles.profileImage}
+            />
             <Text style={styles.likeText}>
-              KnK님이 회원님의 게시물을 좋아합니다.
+              dlwlrma 님이 회원님의 게시물을 좋아합니다.
             </Text>
           </View>
           <View style={styles.whoLike}>
-            {/* <FontAwesome name="user-circle" size={24} color="black" /> */}
+            <Image
+              source={require('../../image/profile2.jpeg')}
+              style={styles.profileImage}
+            />
             <Text style={styles.likeText}>
-              KnK님이 회원님의 게시물을 좋아합니다.
+              sohyeon 님이 회원님의 게시물을 좋아합니다.
             </Text>
           </View>
           <View style={styles.whoLike}>
-            {/* <FontAwesome name="user-circle" size={24} color="black" /> */}
+            <Image
+              source={require('../../image/profile3.jpeg')}
+              style={styles.profileImage}
+            />
             <Text style={styles.likeText}>
-              KnK님이 회원님의 게시물을 좋아합니다.
+              xeesoxee 님이 회원님의 게시물을 좋아합니다.
             </Text>
           </View>
         </View>
@@ -40,20 +52,28 @@ class LikeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#fff',
     paddingTop: 10,
   },
   container2: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: 20,
   },
   whoLike: {
-    height: 27,
-    //width: 310,
-    //paddingVertical:10,
     flexDirection: 'row',
+    paddingBottom: 30,
+    alignItems: 'center',
+  },
+  likeText: {
+    fontSize: 16,
+    paddingLeft: 15,
+  },
+  profileImage: {
+    width: 50,
+    height: 50,
+    borderWidth: 10,
+    borderColor: '#0000',
+    borderRadius: 20,
+    borderWidth: 1,
   },
 });
 
