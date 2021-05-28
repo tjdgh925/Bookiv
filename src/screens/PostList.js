@@ -30,10 +30,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: "white",
   },
   ListPic: {
     flex: 1,
     flexDirection: 'row',
+    paddingTop: 40,
   },
   PicArea: {
     flex: 1,
@@ -42,9 +44,13 @@ const styles = StyleSheet.create({
   },
 
   ListImage: {
-    borderWidth: 0.5,
+    //borderWidth: 0.5,
     width: 100,
     height: 100,
+    borderRadius: 10,
+    //color:"#F6F6F6",
+    
+    backgroundColor: "#DCDCDC",
   },
 });
 

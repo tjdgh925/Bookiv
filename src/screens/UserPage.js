@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  Image,
   View,
   SafeAreaView,
   Platform,
@@ -18,7 +19,10 @@ export default function UserPage({navigation}) {
         <View style={styles.userArea}>
           <View style={styles.IconArea}>
             <View style={styles.iconPaint}>
-              <Text>Ff</Text>
+              <Image
+              style={styles.image}
+              source={require('../../image/user.png')}
+              />
             </View>
             <View style={styles.userId}>
               <Text>KnK</Text>

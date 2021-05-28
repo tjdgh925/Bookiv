@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity, Text, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, Text, Image, View} from 'react-native';
 // import {FontAwesome} from '@expo/vector-icons';
 
 class PostSave extends React.Component {
@@ -15,9 +15,15 @@ class PostSave extends React.Component {
               <Text>2021.3.6</Text>
             </View>
             <View style={styles.likecom}>
-              {/* <FontAwesome name="heart-o" size={24} color="black" /> */}
+            <Image
+                style={styles.image}
+                source={require('../../image/post-love.png')}
+              />
               <Text>3</Text>
-              {/* <FontAwesome name="commenting-o" size={24} color="black" /> */}
+              <Image
+                style={styles.image}
+                source={require('../../image/post-comment.png')}
+              />
               <Text>6</Text>
             </View>
           </View>
@@ -35,14 +41,20 @@ class PostSave extends React.Component {
               <Text>2021.3.6</Text>
             </View>
             <View style={styles.likecom}>
-              {/* <FontAwesome name="heart-o" size={24} color="black" /> */}
+              <Image
+                style={styles.image}
+                source={require('../../image/post-love.png')}
+              />
               <Text>3</Text>
-              {/* <FontAwesome name="commenting-o" size={24} color="black" /> */}
+              <Image
+                style={styles.image}
+                source={require('../../image/post-comment.png')}
+              />
               <Text>6</Text>
             </View>
           </View>
           <View style={styles.PostPic}>
-            {/* <TouchableOpacity style={styles.ImageBtn}></TouchableOpacity> */}
+          <TouchableOpacity style={styles.ImageBtn}></TouchableOpacity>
           </View>
         </View>
 
@@ -55,10 +67,16 @@ class PostSave extends React.Component {
               <Text>2021.3.6</Text>
             </View>
             <View style={styles.likecom}>
-              {/* <FontAwesome name="heart-o" size={24} color="black" /> */}
-              <Text>6</Text>
-              {/* <FontAwesome name="commenting-o" size={24} color="black" /> */}
+            <Image
+                style={styles.image}
+                source={require('../../image/post-love.png')}
+              />
               <Text>3</Text>
+              <Image
+                style={styles.image}
+                source={require('../../image/post-comment.png')}
+              />
+              <Text>6</Text>
             </View>
           </View>
           <View style={styles.PostPic}>
@@ -95,15 +113,17 @@ const styles = StyleSheet.create({
   },
 
   ImageBtn: {
-    borderWidth: 1,
+    //borderWidth: 1,
     width: 70,
     height: 70,
+    borderRadius: 10,
     //paddingBottom:10,
     //paddingTop:10,
     //paddingLeft:130,
     //paddingRight:130,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: "#DCDCDC",
   },
 
   title: {

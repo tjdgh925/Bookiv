@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import {StyleSheet, Image, Text, TextInput, View, SafeAreaView} from 'react-native';
 // import {FontAwesome} from '@expo/vector-icons';
 
 export default function EditProfile() {
@@ -7,7 +7,10 @@ export default function EditProfile() {
     <SafeAreaView style={styles.container}>
       <View style={styles.container2}>
         <View style={styles.userArea}>
-          {/* <FontAwesome name="user-circle" size={100} color="black" /> */}
+          <Image
+              style={styles.image}
+              source={require('../../image/user.png')}
+              />
           <Text
             style={styles.editText}
             //onpress={}
@@ -20,19 +23,25 @@ export default function EditProfile() {
             <View style={styles.infoTitleArea}>
               <Text>이름</Text>
             </View>
-            <View style={styles.infoTextArea}></View>
+            <View style={styles.infoTextArea}>
+              <TextInput style={styles.nameInput}></TextInput>
+            </View>
           </View>
           <View style={styles.emailArea}>
             <View style={styles.infoTitleArea}>
               <Text>이메일</Text>
             </View>
-            <View style={styles.infoTextArea}></View>
+            <View style={styles.infoTextArea}>
+              <TextInput style={styles.emailInput}></TextInput>
+            </View>
           </View>
           <View style={styles.proArea}>
             <View style={styles.infoTitleArea}>
               <Text>소개</Text>
             </View>
-            <View style={styles.infoTextArea}></View>
+            <View style={styles.infoTextArea}>
+              <TextInput style={styles.produceInput}></TextInput>
+            </View>
           </View>
         </View>
         <View style={styles.blankArea}></View>
@@ -93,7 +102,7 @@ const styles = StyleSheet.create({
 
   infoTitleArea: {
     flex: 2,
-    backgroundColor: '#bdc3c7',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -114,8 +123,20 @@ const styles = StyleSheet.create({
 
   headerText: {
     fontSize: 15,
+
   },
   editText: {
     paddingTop: 10,
+    color: "blue",
   },
+
+  nameInput: {
+    flex:1,
+  },
+  emailInput: {
+    flex:1,
+  },
+  produceInput: {
+    flex:1,
+  }
 });

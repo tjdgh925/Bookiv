@@ -10,6 +10,7 @@ import {
   Dimensions,
   KeyboardAvoidingView,
 } from 'react-native';
+import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 const fullWidth = Dimensions.get('window').width;
 
 export default function UploadPost(navigation) {
@@ -17,10 +18,13 @@ export default function UploadPost(navigation) {
     <SafeAreaView style={styles.container}>
       <View style={styles.submitTab}>
         <TouchableOpacity>
-          <Text>Exit</Text>
+          <Image
+            style={styles.Ximage}
+            source={require('../../image/Ximage.png')}
+          />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text>Submit</Text>
+          <Text>올리기</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.uploadImage}>
@@ -32,72 +36,74 @@ export default function UploadPost(navigation) {
             source={require('../../image/camera.png')}
           />
         </TouchableOpacity>
-        <Text>평소 즐겨읽는 책의 리뷰를 남겨 사람들에게 공유해보세요!</Text>
+        <TextInput
+          style={styles.reviewInput}
+          placeholder="평소 즐겨읽는 책의 리뷰를 남겨 사람들에게 공유해보세요!"
+          placeholderTextColor={'#000000'}
+        />
       </View>
-      <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={90}>
-        <View>
+        <View style={styles.container2}>
           <View style={styles.inputContainer}>
             <Image
               style={styles.image2}
-              source={require('../../image/camera.png')}
-            />
-            <TextInput
-              style={styles.contentsInput}
-              placeholder="URL"
-              placeholderTextColor={'red'}
-            />
-          </View>
-          <View style={styles.inputContainer}>
-            <Image
-              style={styles.image2}
-              source={require('../../image/camera.png')}
+              source={require('../../image/tag.png')}
             />
             <TextInput
               style={styles.contentsInput}
               placeholder="책 제목"
-              placeholderTextColor={'red'}
+              placeholderTextColor={'#000000'}
             />
           </View>
           <View style={styles.inputContainer}>
             <Image
               style={styles.image2}
-              source={require('../../image/camera.png')}
+              source={require('../../image/tag.png')}
             />
             <TextInput
               style={styles.contentsInput}
               placeholder="저자"
-              placeholderTextColor={'red'}
+              placeholderTextColor={'#000000'}
             />
           </View>
           <View style={styles.inputContainer}>
             <Image
               style={styles.image2}
-              source={require('../../image/camera.png')}
+              source={require('../../image/tag.png')}
             />
             <TextInput
               style={styles.contentsInput}
               placeholder="장르"
-              placeholderTextColor={'red'}
+              placeholderTextColor={'#000000'}
             />
           </View>
         </View>
-      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 20,
-    paddingHorizontal: 20,
+    backgroundColor: "white",
+    //paddingVertical: 20,
+    //paddingHorizontal: 20,
+  },
+  container2: {
+    flex: 2,
+    //backgroundColor: "red",
   },
   submitTab: {
+    flex: 0.5,
+    paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: "center",
+    //backgroundColor: "blue",
   },
   uploadImage: {
-    paddingTop: 30,
-    flex: 2,
+    paddingTop: 10,
+    flex: 5,
+    paddingLeft: 20,
+    //backgroundColor: "black",
   },
   image: {
     width: 100,
@@ -111,22 +117,28 @@ const styles = StyleSheet.create({
     height: 30,
     alignSelf: 'center',
   },
+  Ximage: {
+    resizeMode: "contain",
+
+  },
   inputContainer: {
     flex: 1,
-    borderTopWidth: 2,
+    borderTopWidth: 1,
     borderColor: '#c2c2c2',
     width: fullWidth,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    paddingVertical: 20,
+    //alignSelf: 'center',
+    //justifyContent: 'center',
+    //paddingVertical: 20,
     flexDirection: 'row',
-    paddingLeft: 30,
+    paddingLeft: 20,
   },
   contentsInput: {
-    width: fullWidth,
-    alignSelf: 'center',
-    color: 'red',
-    height: 25,
-    paddingLeft: 30,
+    //width: fullWidth,
+    //alignSelf: 'center',
+    flex: 1,
+    color: '#000000',
+    paddingLeft: 10,
+    //height: 25,
+    //backgroundColor: "red",
   },
 });
