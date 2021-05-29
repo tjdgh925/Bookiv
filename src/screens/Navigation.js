@@ -19,6 +19,7 @@ import LikeScreen from './LikeScreen';
 import UploadPost from './UploadPost';
 import Search from './Search';
 import MyWeb from '../components/MyWeb';
+import SearchScreen from './SearchScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -28,6 +29,23 @@ const MainStack = createStackNavigator();
 const headerOption = {
   headerShown: false,
 };
+const SearchBook = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name=" " component={Search} options={headerOption} />
+      <Stack.Screen
+        name="SearchScreen"
+        component={SearchScreen}
+        options={headerOption}
+      />
+      <Stack.Screen
+        name="ForgetPasswordScreen"
+        component={ForgetPasswordScreen}
+        options={headerOption}
+      />
+    </Stack.Navigator>
+  );
+}
 const Auth = () => {
   return (
     <Stack.Navigator>
@@ -128,7 +146,7 @@ const MainTabScreen = () => {
         />
         <Tab.Screen
           name="Search"
-          component={Search}
+          component={SearchBook}
           options={{
             tabBarIcon: ({focused}) => {
               return (
@@ -148,14 +166,10 @@ const MainTabScreen = () => {
           name="Post"
           component={UploadPost}
           options={{
-            tabBarIcon: ({focused}) => {
+            tabBarIcon: () => {
               return (
                 <Image
-                  source={
-                    focused
-                      ? require('../../image/upload-plus.png')
-                      : require('../../image/upload+.png')
-                  }
+                  source={require('../../image/upload+.png')}
                   style={{width: 30, height: 30}}
                 />
               );

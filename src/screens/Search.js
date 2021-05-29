@@ -12,10 +12,12 @@ import {
 } from 'react-native';
 import { Picker } from "@react-native-picker/picker";
 import { Value } from 'react-native-reanimated';
+import {useNavigation} from '@react-navigation/native';
 
-export default function Search(navigation) {
+export default function Search() {
     const [selectedValue, setSelectedValue] =useState("책 제목");
     const [searchValue, setSearchValue] = useState("");
+    const navigation = useNavigation();
 
 
     return (
@@ -49,7 +51,7 @@ export default function Search(navigation) {
             <View style={styles.btnArea}>
                 <TouchableOpacity 
                 style={styles.btn}
-                //onPress = 게시물 불러오기
+                onPress={() => navigation.navigate('SearchScreen')}
                 >
                     <Text style={styles.btnText}>
                         Search
