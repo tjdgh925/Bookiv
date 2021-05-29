@@ -8,6 +8,7 @@ import SignInScreen from './SignInScreen';
 import ForgetPasswordScreen from './ForgetPasswordScreen';
 import SignUpScreen from './SignUpScreen';
 import MainScreen from './MainScreen';
+import MainScreenPopular from './MainScreenPopular';
 import SinglePost from './SinglePost';
 import CreatePost from '../components/CreatePost';
 import CreateComment from '../components/CreateComment';
@@ -27,21 +28,6 @@ const MainStack = createStackNavigator();
 const headerOption = {
   headerShown: false,
 };
-function SearchScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Search!</Text>
-    </View>
-  );
-}
-function NotificationScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Notification!</Text>
-    </View>
-  );
-}
-
 const Auth = () => {
   return (
     <Stack.Navigator>
@@ -75,12 +61,28 @@ const MainStackScreen = () => {
     </Stack.Navigator>
   );
 };
+const MainStackScreen2 = () => {
+  return (
+    <Stack.Navigator>
+      <MainStack.Screen
+        name="MainScreenPopular"
+        component={MainScreenPopular}
+        options={headerOption}
+      />
+      <MainStack.Screen
+        name="CreatePost"
+        component={CreatePost}
+        options={headerOption}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const MainUpper = () => {
   return (
     <MainUpperTab.Navigator>
       <MainUpperTab.Screen name="최신" component={MainStackScreen} />
-      <MainUpperTab.Screen name="인기" component={MainStackScreen} />
+      <MainUpperTab.Screen name="인기" component={MainStackScreen2} />
     </MainUpperTab.Navigator>
   );
 };

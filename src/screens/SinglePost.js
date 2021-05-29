@@ -14,6 +14,18 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import CreateComment from '../components/CreateComment';
 
 export default function CreatePost({navigation, route}) {
+  const commentProfile = {
+    profile1: require('../../image/comment1.jpeg'),
+    profile2: require('../../image/comment2.jpeg'),
+  };
+  const contents = {
+    content1: '맞팔해요~',
+    content2: '내용이 너무 좋아요~',
+  };
+  const UID = {
+    id1: 'choi_joon',
+    id2: 'leehochang',
+  };
   const [comment, setComment] = useState('');
   const postObj = {
     //사진
@@ -43,8 +55,8 @@ export default function CreatePost({navigation, route}) {
           </View>
           <View>
             <View style={styles.comment}>
-              <Text> 좋아요 {likes} </Text>
-              <Text> 댓글 {comments} </Text>
+              <Text> 좋아요 {route.params.like} </Text>
+              <Text> 댓글 {route.params.comment} </Text>
             </View>
           </View>
           <View style={styles.btnContainer}>
@@ -69,12 +81,16 @@ export default function CreatePost({navigation, route}) {
               />
             </TouchableOpacity>
           </View>
-          <CreateComment />
-          <CreateComment />
-          <CreateComment />
-          <CreateComment />
-          <CreateComment />
-          <CreateComment />
+          <CreateComment
+            profile={commentProfile.profile1}
+            contents={contents.content1}
+            UID={UID.id1}
+          />
+          <CreateComment
+            profile={commentProfile.profile2}
+            contents={contents.content2}
+            UID={UID.id2}
+          />
         </View>
         <KeyboardAvoidingView style={styles.footer}>
           <View style={styles.commentWrite}>

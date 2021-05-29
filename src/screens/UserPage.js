@@ -30,14 +30,14 @@ export default function UserPage({navigation}) {
 
           <View style={styles.TextArea}>
             <View style={styles.postArea}>
-              <Text style={styles.postText}>3</Text>
+              <Text style={styles.postText}>1</Text>
               <Text style={styles.postText}>게시글</Text>
             </View>
             <View style={styles.likeArea}>
               <Text
                 style={styles.likeText}
                 onPress={() => navigation.navigate('LikeScreen')}>
-                6
+                4
               </Text>
               <Text
                 style={styles.likeText}

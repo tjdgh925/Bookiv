@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, ScrollView} from 'react-native';
 import CreatePost from '../components/CreatePost';
 
-export default function MainScreenPopular({navigation}) {
+export default function MainScreen({navigation}) {
   //나중에 FlatList를 적용해야 한다.
   //const renderItem=() 을 통해서 DB에서 받아온 데이터를 CreatePost Prop으로 전달
   //keyExtractor를 잘 사용한다면, 최신과 인기를 잘 나눌 수 있지 않을까?(최신과 인기를 Prop으로 받아야한다.)
@@ -45,15 +45,6 @@ export default function MainScreenPopular({navigation}) {
       <ScrollView>
         <CreatePost
           style={styles.underBorder}
-          image={image.book1}
-          content={contents.content1}
-          UID={UID.id1}
-          comment={comments.comment1}
-          like={likes.like1}
-          navigation={navigation}
-        />
-        <CreatePost
-          style={styles.underBorder}
           image={image.book2}
           UID={UID.id2}
           content={contents.content2}
@@ -68,6 +59,15 @@ export default function MainScreenPopular({navigation}) {
           like={likes.like3}
           content={contents.content3}
           comment={comments.comment3}
+          navigation={navigation}
+        />
+        <CreatePost
+          style={styles.underBorder}
+          image={image.book1}
+          content={contents.content1}
+          UID={UID.id1}
+          comment={comments.comment1}
+          like={likes.like1}
           navigation={navigation}
         />
         <CreatePost

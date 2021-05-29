@@ -32,6 +32,8 @@ export default class CreatePost extends Component {
               image: this.props.image,
               content: this.props.content,
               UID: this.props.UID,
+              like: this.props.like,
+              comment: this.props.comment,
             })
           }>
           <Text style={styles.userName}>{this.props.UID}</Text>
@@ -40,8 +42,8 @@ export default class CreatePost extends Component {
             <View style={styles.textContainer}>
               <Text style={styles.content}>{this.props.content}</Text>
               <View style={styles.comment}>
-                <Text> 좋아요 {likes} </Text>
-                <Text> 댓글 {comments} </Text>
+                <Text> 좋아요 {this.props.like} </Text>
+                <Text> 댓글 {this.props.comment} </Text>
               </View>
             </View>
           </View>

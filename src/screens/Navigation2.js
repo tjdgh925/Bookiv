@@ -9,28 +9,30 @@ const Tab = createMaterialTopTabNavigator();
 export default function Mytabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen 
+      <Tab.Screen
         name="List"
         component={PostList}
-        options= {{
-          tabBarIcon: () =>
-              <Image
-                source={require('../../image/saveHeart.png')}
-                //style={{width: 5, height: 5}}
-              />
+        options={{
+          tabBarIcon: () => (
+            <Image
+              source={require('../../image/saveHeart.png')}
+              //style={{width: 5, height: 5}}
+            />
+          ),
         }}
-        />
-      <Tab.Screen 
-        name="Save" 
+      />
+      <Tab.Screen
+        name="Save"
         component={PostSave}
         options={{
-            tabBarIcon: () =>
-              <Image
-                source={require('../../image/saveHeart.png')}
-                //style={{width: 5, height: 5}}
-              />
-        }} 
-        />
+          tabBarIcon: () => (
+            <Image
+              source={require('../../image/saveHeart.png')}
+              //style={{width: 5, height: 5}}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }

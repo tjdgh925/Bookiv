@@ -42,48 +42,48 @@ export default function UploadPost(navigation) {
           placeholderTextColor={'#000000'}
         />
       </View>
-        <View style={styles.container2}>
-          <View style={styles.inputContainer}>
-            <Image
-              style={styles.image2}
-              source={require('../../image/tag.png')}
-            />
-            <TextInput
-              style={styles.contentsInput}
-              placeholder="책 제목"
-              placeholderTextColor={'#000000'}
-            />
-          </View>
-          <View style={styles.inputContainer}>
-            <Image
-              style={styles.image2}
-              source={require('../../image/tag.png')}
-            />
-            <TextInput
-              style={styles.contentsInput}
-              placeholder="저자"
-              placeholderTextColor={'#000000'}
-            />
-          </View>
-          <View style={styles.inputContainer}>
-            <Image
-              style={styles.image2}
-              source={require('../../image/tag.png')}
-            />
-            <TextInput
-              style={styles.contentsInput}
-              placeholder="장르"
-              placeholderTextColor={'#000000'}
-            />
-          </View>
+      <View style={styles.container2}>
+        <View style={styles.inputContainer}>
+          <Image
+            style={styles.image2}
+            source={require('../../image/tag.png')}
+          />
+          <TextInput
+            style={styles.contentsInput}
+            placeholder="책 제목"
+            placeholderTextColor={'#000000'}
+          />
         </View>
+        <View style={styles.inputContainer}>
+          <Image
+            style={styles.image2}
+            source={require('../../image/tag.png')}
+          />
+          <TextInput
+            style={styles.contentsInput}
+            placeholder="저자"
+            placeholderTextColor={'#000000'}
+          />
+        </View>
+        <View style={styles.inputContainer}>
+          <Image
+            style={styles.image2}
+            source={require('../../image/tag.png')}
+          />
+          <TextInput
+            style={styles.contentsInput}
+            placeholder="장르"
+            placeholderTextColor={'#000000'}
+          />
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     //paddingVertical: 20,
     //paddingHorizontal: 20,
   },
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: "center",
+    alignItems: 'center',
     //backgroundColor: "blue",
   },
   uploadImage: {
@@ -118,8 +118,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   Ximage: {
-    resizeMode: "contain",
-
+    resizeMode: 'contain',
   },
   inputContainer: {
     flex: 1,
