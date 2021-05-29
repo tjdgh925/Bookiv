@@ -9,7 +9,6 @@ import {
   TextInput,
   Linking,
 } from 'react-native';
-import {WebView} from 'react-native-webview';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import CreateComment from '../components/CreateComment';
 
@@ -38,6 +37,7 @@ export default function CreatePost({navigation, route}) {
   };
   const likes = 6;
   const comments = 9;
+  const id = route.params.UID;
   return (
     <View style={styles.containerBig}>
       <KeyboardAwareScrollView automaticallyAdjustContentInsets={false}>
@@ -74,7 +74,11 @@ export default function CreatePost({navigation, route}) {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.btn}
-              onPress={() => navigation.navigate('MyWeb')}>
+              onPress={() =>
+                navigation.navigate('MyWeb', {
+                  UID: route.params.UID,
+                })
+              }>
               <Image
                 source={require('../../image/aladin.png')}
                 style={[styles.img, styles.aladin]}
