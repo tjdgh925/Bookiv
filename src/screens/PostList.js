@@ -18,7 +18,7 @@ class PostList extends React.Component {
                   content: bookContent,
                   UID: userId,
                   like: 4,
-                  comment: 0,
+                  comment: 2,
                 })
               }>
               <Image source={bookImg} style={styles.ListImage} />
