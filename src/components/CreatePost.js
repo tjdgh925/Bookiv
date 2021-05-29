@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Component} from 'react';
 import {
   SafeAreaView,
   View,
@@ -8,46 +8,47 @@ import {
   Touchable,
   StyleSheet,
 } from 'react-native';
-import {block} from 'react-native-reanimated';
 import {useNavigation} from '@react-navigation/native';
 
-export default function CreatePost() {
-  const postObj = {
-    //사진
-    //글(내용)
-    //유저아이디
-    //좋아요
-    //댓글
-    //링크
-    //
-  };
-  const likes = 6;
-  const comments = 9;
-  const navigation = useNavigation();
-  return (
-    <View style={styles.setBorder}>
-      <TouchableOpacity onPress={() => navigation.navigate('SinglePost')}>
-        <Text style={styles.userName}>UID</Text>
-        <View style={styles.container}>
-          <Image
-            style={styles.image}
-            source={require('../../image/NorwegianWood.jpeg')}
-          />
-          <View style={styles.textContainer}>
-            <Text style={styles.content}>
-              Eiusmod deserunt culpa sunt est id minim eiusmod proident. Esse
-              magna nostrud magna consequat incididunt elit ipsum magna amet
-              adipisicing aliqua adipisicing qui. Eu irure non quis excepteur
-            </Text>
-            <View style={styles.comment}>
-              <Text> 좋아요 {likes} </Text>
-              <Text> 댓글 {comments} </Text>
+export default class CreatePost extends Component {
+  render() {
+    const likes = 6;
+    const comments = 9;
+    const navigation = useNavigation;
+    const postObj = {
+      //사진
+      //글(내용)
+      //유저아이디
+      //좋아요
+      //댓글
+      //링크
+      //
+    };
+    return (
+      <View style={styles.setBorder}>
+        <TouchableOpacity
+          onPress={() =>
+            this.props.navigation.navigate('SinglePost', {
+              image: this.props.image,
+              content: this.props.content,
+              UID: this.props.UID,
+            })
+          }>
+          <Text style={styles.userName}>{this.props.UID}</Text>
+          <View style={styles.container}>
+            <Image style={styles.image} source={this.props.image} />
+            <View style={styles.textContainer}>
+              <Text style={styles.content}>{this.props.content}</Text>
+              <View style={styles.comment}>
+                <Text> 좋아요 {likes} </Text>
+                <Text> 댓글 {comments} </Text>
+              </View>
             </View>
           </View>
-        </View>
-      </TouchableOpacity>
-    </View>
-  );
+        </TouchableOpacity>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     borderBottomWidth: 1,
     borderColor: '#c2c2c2',
-    backgroundColor: "white",
+    backgroundColor: 'white',
   },
   container: {
     flexDirection: 'row',

@@ -15,13 +15,12 @@ export default function UserPage({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container2}>
-        
         <View style={styles.userArea}>
           <View style={styles.IconArea}>
             <View style={styles.iconPaint}>
               <Image
-              style={styles.image}
-              source={require('../../image/user.png')}
+                style={styles.image}
+                source={require('../../image/user.png')}
               />
             </View>
             <View style={styles.userId}>
@@ -78,7 +77,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 
-  
   userArea: {
     flex: 2,
     flexDirection: 'row',
@@ -146,6 +144,7 @@ const styles = StyleSheet.create({
     paddingRight: 130,
     alignItems: 'center',
     justifyContent: 'center',
+    borderColor: '#c2c2c2',
   },
   editText: {
     fontSize: 16,

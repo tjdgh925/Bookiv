@@ -17,6 +17,7 @@ import EditProfile from './EditProfile';
 import LikeScreen from './LikeScreen';
 import UploadPost from './UploadPost';
 import Search from './Search';
+import MyWeb from '../components/MyWeb';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -96,6 +97,7 @@ const postNavigator = () => {
         component={SinglePost}
         options={headerOption}
       />
+      <postStack.Screen name="MyWeb" component={MyWeb} options={headerOption} />
     </postStack.Navigator>
   );
 };

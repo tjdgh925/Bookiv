@@ -15,16 +15,16 @@ class PostSave extends React.Component {
               <Text>2021.3.6</Text>
             </View>
             <View style={styles.likecom}>
-            <Image
+              <Image
                 style={styles.image}
                 source={require('../../image/post-love.png')}
               />
-              <Text>3</Text>
+              <Text> 3 </Text>
               <Image
                 style={styles.image}
                 source={require('../../image/post-comment.png')}
               />
-              <Text>6</Text>
+              <Text> 6 </Text>
             </View>
           </View>
           <View style={styles.PostPic}>
@@ -45,16 +45,16 @@ class PostSave extends React.Component {
                 style={styles.image}
                 source={require('../../image/post-love.png')}
               />
-              <Text>3</Text>
+              <Text> 3 </Text>
               <Image
                 style={styles.image}
                 source={require('../../image/post-comment.png')}
               />
-              <Text>6</Text>
+              <Text> 6 </Text>
             </View>
           </View>
           <View style={styles.PostPic}>
-          <TouchableOpacity style={styles.ImageBtn}></TouchableOpacity>
+            <TouchableOpacity style={styles.ImageBtn}></TouchableOpacity>
           </View>
         </View>
 
@@ -67,16 +67,16 @@ class PostSave extends React.Component {
               <Text>2021.3.6</Text>
             </View>
             <View style={styles.likecom}>
-            <Image
+              <Image
                 style={styles.image}
                 source={require('../../image/post-love.png')}
               />
-              <Text>3</Text>
+              <Text> 3 </Text>
               <Image
                 style={styles.image}
                 source={require('../../image/post-comment.png')}
               />
-              <Text>6</Text>
+              <Text> 6 </Text>
             </View>
           </View>
           <View style={styles.PostPic}>
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     //paddingRight:130,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: "#DCDCDC",
+    backgroundColor: '#DCDCDC',
   },
 
   title: {
@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     flex: 2,
     flexDirection: 'row',
     paddingHorizontal: 10,
+    alignItems: 'center',
   },
 });
 

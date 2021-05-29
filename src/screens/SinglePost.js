@@ -7,11 +7,13 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   TextInput,
+  Linking,
 } from 'react-native';
+import {WebView} from 'react-native-webview';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import CreateComment from '../components/CreateComment';
 
-export default function CreatePost({navigation}) {
+export default function CreatePost({navigation, route}) {
   const [comment, setComment] = useState('');
   const postObj = {
     //사진
@@ -28,20 +30,16 @@ export default function CreatePost({navigation}) {
     <View style={styles.containerBig}>
       <KeyboardAwareScrollView automaticallyAdjustContentInsets={false}>
         <View style={styles.container}>
-          <Text style={styles.userID}>UID</Text>
+          <Text style={styles.userID}>{route.params.UID}</Text>
           <View style={styles.imageContainer}>
             <Image
               resizeMode="cover"
               style={styles.image}
-              source={require('../../image/NorwegianWood.jpeg')}
+              source={route.params.image}
             />
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.content}>
-              Eiusmod deserunt culpa sunt est id minim eiusmod proident.
-              Essemagnanostrud magna consequat incididunt elit ipsum magna amet
-              adipisicingaliqua adipisicing qui. Eu irure non quis excepteur
-            </Text>
+            <Text style={styles.content}>{route.params.content}</Text>
           </View>
           <View>
             <View style={styles.comment}>
@@ -62,7 +60,9 @@ export default function CreatePost({navigation}) {
                 style={styles.img}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => navigation.navigate('MyWeb')}>
               <Image
                 source={require('../../image/aladin.png')}
                 style={[styles.img, styles.aladin]}
