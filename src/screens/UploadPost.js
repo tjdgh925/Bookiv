@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,12 +10,31 @@ import {
   Dimensions,
   KeyboardAvoidingView,
 } from 'react-native';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
 const fullWidth = Dimensions.get('window').width;
 
+
+  
+
 export default function UploadPost(navigation) {
+  const [img, setImg] = useState(null);
+
+  const addImage = () => {
+    launchImageLibrary({}, Response => {
+      setImg(Response.uri)
+      //console.log(`img`)
+      //console.log(img.uri)
+      //setImg(null)
+    })
+  };
+  
+    
+  
   return (
     <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView style={styles.footer}  enabled>
       <View style={styles.submitTab}>
         <TouchableOpacity>
           <Image
@@ -27,68 +46,89 @@ export default function UploadPost(navigation) {
           <Text>올리기</Text>
         </TouchableOpacity>
       </View>
+      
       <View style={styles.uploadImage}>
         <TouchableOpacity
-        // onPress={사진첩가서 골라온다.}
+         onPress={addImage}
         >
+          {img == null
+          ? 
+          <Image 
+          source={require('../../image/camera.png')} 
+          style={styles.image} />
+          :
           <Image
             style={styles.image}
-            source={require('../../image/camera.png')}
+            source={{uri: img}}
           />
+          
+          }
+          
+          
         </TouchableOpacity>
+        
         <TextInput
           style={styles.reviewInput}
           placeholder="평소 즐겨읽는 책의 리뷰를 남겨 사람들에게 공유해보세요!"
           placeholderTextColor={'#000000'}
         />
       </View>
-      <View style={styles.container2}>
-        <View style={styles.inputContainer}>
-          <Image
-            style={styles.image2}
-            source={require('../../image/tag.png')}
-          />
-          <TextInput
-            style={styles.contentsInput}
-            placeholder="책 제목"
-            placeholderTextColor={'#000000'}
-          />
+      
+        <View style={styles.container2}>
+        
+          <View style={styles.inputContainer}>
+            <Image
+              style={styles.image2}
+              source={require('../../image/tag.png')}
+            />
+            <TextInput
+              style={styles.contentsInput}
+              placeholder="책 제목"
+              placeholderTextColor={'#000000'}
+            />
+          </View>
+          <View style={styles.inputContainer}>
+            <Image
+              style={styles.image2}
+              source={require('../../image/tag.png')}
+            />
+            <TextInput
+              style={styles.contentsInput}
+              placeholder="저자"
+              placeholderTextColor={'#000000'}
+            />
+          </View>
+          <View style={styles.inputContainer}>
+            <Image
+              style={styles.image2}
+              source={require('../../image/tag.png')}
+            />
+            <TextInput
+              style={styles.contentsInput}
+              placeholder="장르"
+              placeholderTextColor={'#000000'}
+            />
+          </View>
+            
         </View>
-        <View style={styles.inputContainer}>
-          <Image
-            style={styles.image2}
-            source={require('../../image/tag.png')}
-          />
-          <TextInput
-            style={styles.contentsInput}
-            placeholder="저자"
-            placeholderTextColor={'#000000'}
-          />
-        </View>
-        <View style={styles.inputContainer}>
-          <Image
-            style={styles.image2}
-            source={require('../../image/tag.png')}
-          />
-          <TextInput
-            style={styles.contentsInput}
-            placeholder="장르"
-            placeholderTextColor={'#000000'}
-          />
-        </View>
-      </View>
+        
+        
+        </KeyboardAvoidingView>
     </SafeAreaView>
   );
+            
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    //backgroundColor: "black",
     //paddingVertical: 20,
     //paddingHorizontal: 20,
   },
   container2: {
     flex: 2,
+    //paddingVertical: 200,
+    //flexDirection: 'flex-end',
     //backgroundColor: "red",
   },
   submitTab: {
@@ -96,14 +136,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: "center",
     //backgroundColor: "blue",
   },
   uploadImage: {
     paddingTop: 10,
     flex: 5,
     paddingLeft: 20,
-    //backgroundColor: "black",
+    //backgroundColor: "orange",
   },
   image: {
     width: 100,
@@ -118,14 +158,15 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   Ximage: {
-    resizeMode: 'contain',
+    resizeMode: "contain",
+
   },
   inputContainer: {
     flex: 1,
     borderTopWidth: 1,
     borderColor: '#c2c2c2',
     width: fullWidth,
-    //alignSelf: 'center',
+    //alignSelf: 'flex-end',
     //justifyContent: 'center',
     //paddingVertical: 20,
     flexDirection: 'row',
@@ -139,5 +180,9 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     //height: 25,
     //backgroundColor: "red",
+  },
+  footer: {
+    flex: 1,
+    justifyContent: 'flex-end',
   },
 });
