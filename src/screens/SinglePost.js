@@ -96,7 +96,7 @@ export default function CreatePost({navigation, route}) {
           <View style={styles.commentWrite}>
             <TextInput
               style={styles.commentInput}
-              placeholder="{}UID로 댓글 달기"
+              placeholder="댓글 달기"
               onChangeText={comment => setComment(comment)}
               returnKeyType="send"
             />

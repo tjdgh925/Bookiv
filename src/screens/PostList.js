@@ -6,7 +6,7 @@ class PostList extends React.Component {
     const bookImg = require('../../image/book5.png');
     const bookContent =
       '이젠 안다. 관계가 마음만으로도 이어질 수 있다는 이상에서, 관계는 마음만으로 어떻게 할 수 없다는 현실을. 노력만 하면 다 될 수 있다는 이상에서, 노력을 해도 덜 될 수 있다는 현실을. 저도 모르게 매끄러운 과정을 통해 현실을 깨닫는 순간이 온다. 그때, 우린 꽤 닳아 있다는 걸 깨우친다. 어쩌면 세상에 사포질이라도 당한 것처럼.';
-    const userId = 'userMy';
+    const userId = 'Test';
     return (
       <View style={styles.container}>
         <View style={styles.ListPic}>

@@ -24,7 +24,7 @@ export default function UserPage({navigation}) {
               />
             </View>
             <View style={styles.userId}>
-              <Text>KnK</Text>
+              <Text>Test</Text>
             </View>
           </View>
 
