@@ -45,7 +45,7 @@ const SearchBook = () => {
       />
     </Stack.Navigator>
   );
-}
+};
 const Auth = () => {
   return (
     <Stack.Navigator>
@@ -166,10 +166,14 @@ const MainTabScreen = () => {
           name="Post"
           component={UploadPost}
           options={{
-            tabBarIcon: () => {
+            tabBarIcon: ({focused}) => {
               return (
                 <Image
-                  source={require('../../image/upload+.png')}
+                  source={
+                    focused
+                      ? require('../../image/upload-plus.png')
+                      : require('../../image/upload+.png')
+                  }
                   style={{width: 30, height: 30}}
                 />
               );
