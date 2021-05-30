@@ -21,10 +21,10 @@ export default function UploadPost(navigation) {
 
   const addImage = () => {
     launchImageLibrary({}, Response => {
-      setImg(Response.uri);
+      //setImg(img+Response.uri);
       //console.log(`img`)
       //console.log(img.uri)
-      //setImg(null)
+      setImg(null)
     });
   };
 
