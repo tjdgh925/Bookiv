@@ -12,7 +12,7 @@ import {
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import CreateComment from '../components/CreateComment';
 
-export default function SinglePost({navigation, route}) {
+export default function SinglePostEx({navigation, route}) {
   const commentProfile = {
     profile1: require('../../image/comment1.jpeg'),
     profile2: require('../../image/comment2.jpeg'),
@@ -40,26 +40,30 @@ export default function SinglePost({navigation, route}) {
   };
   const likes = 6;
   const comments = 9;
-  const id = route.params.UID;
   return (
     <View style={styles.containerBig}>
       <KeyboardAwareScrollView automaticallyAdjustContentInsets={false}>
         <View style={styles.container}>
-          <Text style={styles.userID}>{route.params.UID}</Text>
+          <Text style={styles.userID}>userA</Text>
           <View style={styles.imageContainer}>
             <Image
               resizeMode="cover"
               style={styles.image}
-              source={route.params.image}
+              source={require('../../image/book1.png')}
             />
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.content}>{route.params.content}</Text>
+            <Text style={styles.content}>
+              현대사회에서 특히! 여성으로 살아가면서 털에 자유로울수 있는 사람이
+              있을까? 좀 뭐랄까 약간 입에 담기도 어색하고 아무짓도 안했는데
+              부끄럽기도하고 검색하다보면 유해단어라고 뜨기도 한다는 털! 에 관한
+              윰토끼님의 이야기
+            </Text>
           </View>
           <View>
             <View style={styles.comment}>
-              <Text> 좋아요 {route.params.like} </Text>
-              <Text> 댓글 {route.params.comment} </Text>
+              <Text> 좋아요 16 </Text>
+              <Text> 댓글 3 </Text>
             </View>
           </View>
           <View style={styles.btnContainer}>
@@ -79,7 +83,7 @@ export default function SinglePost({navigation, route}) {
               style={styles.btn}
               onPress={() =>
                 navigation.navigate('MyWeb', {
-                  UID: route.params.UID,
+                  UID: 'userA',
                 })
               }>
               <Image
@@ -88,19 +92,20 @@ export default function SinglePost({navigation, route}) {
               />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            activeOpacity={100}
-            onPress={() => navigation.navigate('SinglePostEx')}>
-            <CreateComment
-              profile={commentProfile.profile1}
-              contents={contents.content1}
-              UID={UID.id1}
-            />
-          </TouchableOpacity>
+          <CreateComment
+            profile={commentProfile.profile1}
+            contents={contents.content1}
+            UID={UID.id1}
+          />
           <CreateComment
             profile={commentProfile.profile2}
             contents={contents.content2}
             UID={UID.id2}
+          />
+          <CreateComment
+            profile={commentProfile.profile3}
+            contents={contents.content3}
+            UID={UID.id3}
           />
         </View>
         <KeyboardAvoidingView style={styles.footer}>
@@ -111,17 +116,9 @@ export default function SinglePost({navigation, route}) {
               onChangeText={comment => setComment(comment)}
               returnKeyType="send"
             />
-            <TouchableOpacity
-              onPress={() => navigation.navigate('SinglePostEx')}
-              style={styles.submitComment}>
+            <TouchableOpacity>
               <Image
-                style={{
-                  height: 30,
-                  width: 30,
-                  right: 35,
-                  top: 0,
-                  zIndex: 0,
-                }}
+                style={styles.submitComment}
                 source={require('../../image/submit.png')}
               />
             </TouchableOpacity>
@@ -192,7 +189,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 10,
     width: '100%',
-    zIndex: 0,
   },
   commentInput: {
     width: '100%',
@@ -203,12 +199,11 @@ const styles = StyleSheet.create({
     paddingVertical: -20,
   },
   submitComment: {
-    // position: 'absolute',
-    // right: 5,
-    // top: 5,
-    // width: 22,
-    // height: 22,
-    zIndex: 1,
+    position: 'absolute',
+    right: 5,
+    top: 5,
+    width: 22,
+    height: 22,
   },
   footer: {
     flex: 1,

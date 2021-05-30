@@ -10,6 +10,7 @@ import SignUpScreen from './SignUpScreen';
 import MainScreen from './MainScreen';
 import MainScreenPopular from './MainScreenPopular';
 import SinglePost from './SinglePost';
+import SinglePostEx from './SinglePostEx';
 import CreatePost from '../components/CreatePost';
 import CreateComment from '../components/CreateComment';
 import Header from '../components/Header';
@@ -115,6 +116,11 @@ const postNavigator = () => {
       <postStack.Screen
         name="SinglePost"
         component={SinglePost}
+        options={headerOption}
+      />
+      <postStack.Screen
+        name="SinglePostEx"
+        component={SinglePostEx}
         options={headerOption}
       />
       <postStack.Screen name="MyWeb" component={MyWeb} options={headerOption} />
