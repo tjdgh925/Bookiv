@@ -1,6 +1,6 @@
 # Bookiv
 
-###취향을 잇는 온라인 서재
+취향을 잇는 온라인 서재
 
 ---------------------------
 + React, React-Native, Firebase를 이용한 Hybrid App
