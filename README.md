@@ -6,4 +6,5 @@
 + React, React-Native, Firebase를 이용한 Hybrid App
  + 책 리뷰를 기반으로 한 SNS APP
  
+ https://youtu.be/0RTtScO6fo8
 
