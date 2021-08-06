@@ -21,12 +21,12 @@ export default function SinglePostEx({navigation, route}) {
   const contents = {
     content1: '맞팔해요~',
     content2: '내용이 너무 좋아요~',
-    content3: '댓글 테스트',
+    content3: 'test',
   };
   const UID = {
     id1: 'choi_joon',
     id2: 'leehochang',
-    id3: 'test',
+    id3: 'Test',
   };
   const [comment, setComment] = useState('');
   const postObj = {
